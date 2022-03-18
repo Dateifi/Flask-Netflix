@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% include 'includes/_navbar.html' %}
+
+    <div class="container">
+        <h1>Movies</h1>
+        <ul>
+            {% for movie in movies %}
+                <li><a href="movie/{{movie.id}}">{{ movie.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+{% endblock %}

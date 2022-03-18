@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<header class="showcase">
+    <div class="showcase-top">
+        <img src="https://i.ibb.co/r5krrdz/logo.png" alt="Netflix Logo">
+        <a href="/login" class="btn btn-rounded">Sign In</a>
+    </div>
+    <div class="showcase-content">
+        <h1>See what's next</h1>
+        <p>Watch anywhere. Cancel Anytime</p>
+        <a href="#" class="btn btn-xl">
+            Watch free for 30 days
+        </a>
+    </div>
+</header>
+
+<section class="tabs">
+    <div class="container">
+        <div id="tab-1" class="tab-item tab-border">
+            <p>Cancel any time</p>
+        </div>
+        <div id="tab-2" class="tab-item">
+            <p>Watch anywhere</p>
+        </div>
+        <div id="tab-3" class="tab-item">
+            <p>Pick your price</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
