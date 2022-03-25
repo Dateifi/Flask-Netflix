@@ -4,8 +4,30 @@
     {% include 'includes/_navbar.html' %}
 
     <div class="container">
-        <h1>LoginPage</h1>
-    </div>
+    <div class="input-form">
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+                <div class="alert {{ category }}">
+                <span class="closebtn" onclick="this.parentElement.style.opacity='0'">&times;</span>
+                {{ message }}
+                </div>
+            {% endfor %}
+            <h1 class="mb-3">LoginPage</h1>
+            <form method="POST">
+                {{ form.csrf_token() }}
 
+                <div class="mb-3">
+                    {{ form.email(class='form-control') }}
+                </div>
+                <div class="mb-3">
+                    {{ form.password(class='form-control') }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.submit(class='btn btn-rounded') }}
+                </div>
+            </form>
+            <p>Not signed up yet? <a href="/register">Register here!</a></p>
+        </div>
+    </div>
 {% endblock %}
 

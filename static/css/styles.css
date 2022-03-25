@@ -11,6 +11,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Set default styling */
@@ -98,6 +99,10 @@ nav {
     align-items: center;
 }
 
+nav img {
+    height: 40px;
+}
+
 nav ul li {
     list-style-type: none;
     display: inline-block;
@@ -106,6 +111,40 @@ nav ul li {
 
 nav ul li:last-child {
     padding-right: 0;
+}
+
+/* Alerts */
+
+.alert {
+    color: white;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 1s;
+
+}
+
+.success {
+    background-color: #04aa6d;
+}
+
+.error {
+    background-color: var(--primary-color);
+}
+
+.closebtn {
+    float: right;
+    color: white;
+    font-size: 22px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.closebtn:hover {
+    color: black;
+
 }
 
 
@@ -201,6 +240,14 @@ nav ul li:last-child {
 .tabs .container > div {
     padding: 1.5rem 0;
 }
+
+.input-form {
+    background-color: rgba(25, 25, 25);
+    max-width: 40%;
+    padding: 2rem;
+    margin: auto;
+}
+
 
 .footer {
     max-width: 70%;
