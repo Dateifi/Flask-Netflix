@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% include 'includes/_navbar.html' %}
+
+    <div class="container">
+        <div class="input-form">
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+                <div class="alert {{ category }}">
+                    <span class="closebtn" onclick="this.parentElement.style.opacity='0'">&times;</span>
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <h1 class="mb-3">Dashboard</h1>
+            <p>You are logged in, welcome back {{ current_user.name }}</p>
+            <p>Done with everything <a href="{{ url_for('logout') }}">Logout!</a></p>
+        </div>
+    </div>
+{% endblock %}
+

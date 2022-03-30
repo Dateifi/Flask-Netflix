@@ -2,8 +2,14 @@
     <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Netflix"></a>
 
     <ul>
+        <!--Fix if else signed in -->
         <li><a href="/">Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
+        {% if current_user.is_authenticated %}
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        {% else %}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        {% endif %}
     </ul>
 </nav>

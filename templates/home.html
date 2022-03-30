@@ -4,7 +4,11 @@
 <header class="showcase">
     <div class="showcase-top">
         <img src="https://i.ibb.co/r5krrdz/logo.png" alt="Netflix Logo">
-        <a href="/login" class="btn btn-rounded">Sign In</a>
+        {% if current_user.is_authenticated %}
+        <a href={{ url_for('dashboard') }} class="btn btn-rounded">Dashboard</a>
+        {% else %}
+           <a href="/login" class="btn btn-rounded">Sign In</a>
+        {% endif %}
     </div>
     <div class="showcase-content">
         <h1>See what's next</h1>
