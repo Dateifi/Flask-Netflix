@@ -14,6 +14,7 @@
             <h1 class="mb-3">Dashboard</h1>
             <p>You are logged in, welcome back {{ current_user.name }}</p>
             <p>Done with everything <a href="{{ url_for('logout') }}">Logout!</a></p>
+        <p><a href="{{ url_for('update_profile', id=current_user.id) }}">Update my profile</a></p>
         </div>
     </div>
 {% endblock %}
