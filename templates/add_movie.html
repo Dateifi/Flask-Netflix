@@ -12,7 +12,7 @@
                 </div>
             {% endfor %}
             <h1 class="mb-3">Add movie</h1>
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 {{ form.csrf_token() }}
 
                 <div class="mb-3">

@@ -70,7 +70,7 @@ class Movie(db.Model):
     __tablename__ = 'movies'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150), nullable=False)
-    date_released = db.Column(db.Date())
+    date_released = db.Column(db.Date)
     img_url = db.Column(db.String(250))
 
     def __init__(self, title, date_released, img_url):
