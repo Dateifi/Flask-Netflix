@@ -5,7 +5,7 @@ from flask import Flask, render_template, flash, url_for, redirect
 from flask_login import UserMixin, LoginManager, login_required, login_user, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileField
+from flask_wtf.file import FileField, FileRequired, FileAllowed
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from wtforms import StringField, PasswordField, SubmitField, DateField
@@ -86,7 +86,7 @@ class AddMovieForm(FlaskForm):
     title = StringField("Movie Title", validators=[InputRequired()],
                         render_kw={'autofocus': True, 'placeholder': 'Movie Title'})
     date_released = DateField('Release Date', validators=[InputRequired()])
-    img_url = FileField('Movie Image')
+    img_url = FileField('Movie Image', validators=[FileRequired(), FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
     submit = SubmitField('Add Movie')
 
 
@@ -189,6 +189,13 @@ def update_profile(id):
     user = User.query.filter_by(id=id).first()
     if user:
         return render_template('update_user.html', form=form, user=user)
+
+
+@app.route('/movies')
+@login_required
+def movies():
+    movies = Movie.query.all()
+    return render_template('movies.html', movies=movies)
 
 
 @app.route('/add-movie', methods=['GET', 'POST'])

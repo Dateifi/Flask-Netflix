@@ -5,6 +5,8 @@
         <!--Fix if else signed in -->
         <li><a href="/">Home</a></li>
         {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('add_movie') }}">Add Movie</a></li>
+            <li><a href="{{ url_for('movies') }}">Movies</a></li>
             <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/logout">Logout</a></li>
         {% else %}

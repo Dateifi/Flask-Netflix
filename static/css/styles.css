@@ -90,6 +90,16 @@ img {
     padding: 0 2rem;
 }
 
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+.card {
+    border: 1px solid white;
+}
+
 nav {
     display: flex;
     justify-content: space-between;

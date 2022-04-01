@@ -5,11 +5,17 @@
 
     <div class="container">
         <h1>Movies</h1>
-        <ul>
+        <div class="card-grid">
             {% for movie in movies %}
-                <li><a href="movie/{{movie.id}}">{{ movie.title }}</a></li>
+                <div class="card">
+                    <img src="/static/images/{{ movie.img_url }}" alt="{{ movie.title }}">
+                <div class="container">
+                    <h4>{{ movie.title }}</h4>
+                    <p>{{ movie.date_released }}</p>
+                </div>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     </div>
     
 {% endblock %}

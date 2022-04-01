@@ -24,6 +24,15 @@
                 <div class="mb-3">
                     {{ form.img_url(class='form-control') }}
                 </div>
+                <div class="mb-3">
+                    {% if form.img_url.errors %}
+                    <ul class="errors">
+                        {%  for error in form.img_url.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </div>
 
                 <div class="mb-3">
                     {{ form.submit(class='btn btn-rounded') }}
